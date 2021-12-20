@@ -8,14 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Oracle.ManagedDataAccess.Client;
-using System.Configuration;
 
 namespace Project.UserControls
 {
-    public partial class Prijemnica : UserControl
+    public partial class StavkaPrijemnice : UserControl
     {
         OracleConnection con;
-        public Prijemnica(OracleConnection con)
+        public StavkaPrijemnice(Oracle.ManagedDataAccess.Client.OracleConnection con)
         {
             this.con = con;
             InitializeComponent();
@@ -24,20 +23,18 @@ namespace Project.UserControls
         private void updateDataGrid()
         {
             OracleCommand cmd = con.CreateCommand();
-            cmd.CommandText = "SELECT * FROM PRIJEMNICA ORDER BY BROJPRIJEMNICE";
+            cmd.CommandText = "SELECT * FROM STAVKAPRIJEMNICE ORDER BY BROJPRIJEMNICE";
             cmd.CommandType = CommandType.Text;
             OracleDataReader dr = cmd.ExecuteReader();
             DataTable dt = new DataTable();
             dt.Load(dr);
-            dgvStart.DataSource = dt.DefaultView;
+            dgvStart1.DataSource = dt.DefaultView;
             dr.Close();
         }
 
-        private void Prijemnica_Load(object sender, EventArgs e)
+        private void StavkaPrijemnice_Load(object sender, EventArgs e)
         {
             updateDataGrid();
         }
-
-        
     }
 }

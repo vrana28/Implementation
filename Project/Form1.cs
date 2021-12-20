@@ -11,7 +11,7 @@ using System.Windows.Forms;
 using Oracle.ManagedDataAccess.Client;
 using Oracle.ManagedDataAccess.Types;
 using System.Configuration;
-
+using Project.UserControls;
 
 namespace Project
 {
@@ -48,12 +48,43 @@ namespace Project
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+            try
+            {
+                PanelMethod(new Prijemnica(con));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
             con.Close();
+        }
+
+        private void stavkePrijemniceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                PanelMethod(new StavkaPrijemnice(con));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void prijemnicaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                PanelMethod(new Prijemnica(con));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

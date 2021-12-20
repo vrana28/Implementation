@@ -62,6 +62,12 @@
     <Compile Include="UserControls\Prijemnica.Designer.cs">
       <DependentUpon>Prijemnica.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\StavkaPrijemnice.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\StavkaPrijemnice.Designer.cs">
+      <DependentUpon>StavkaPrijemnice.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -76,6 +82,9 @@
     </Compile>
     <EmbeddedResource Include="UserControls\Prijemnica.resx">
       <DependentUpon>Prijemnica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\StavkaPrijemnice.resx">
+      <DependentUpon>StavkaPrijemnice.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

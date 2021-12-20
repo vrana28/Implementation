@@ -51,7 +51,7 @@
             this.artikalToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(125, 450);
+            this.menuStrip1.Size = new System.Drawing.Size(126, 450);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -59,15 +59,17 @@
             // 
             this.prijemnicaToolStripMenuItem.Name = "prijemnicaToolStripMenuItem";
             this.prijemnicaToolStripMenuItem.Padding = new System.Windows.Forms.Padding(4, 0, 4, 30);
-            this.prijemnicaToolStripMenuItem.Size = new System.Drawing.Size(112, 49);
+            this.prijemnicaToolStripMenuItem.Size = new System.Drawing.Size(113, 49);
             this.prijemnicaToolStripMenuItem.Text = "Prijemnica";
+            this.prijemnicaToolStripMenuItem.Click += new System.EventHandler(this.prijemnicaToolStripMenuItem_Click);
             // 
             // stavkePrijemniceToolStripMenuItem
             // 
             this.stavkePrijemniceToolStripMenuItem.Name = "stavkePrijemniceToolStripMenuItem";
             this.stavkePrijemniceToolStripMenuItem.Padding = new System.Windows.Forms.Padding(4, 0, 4, 30);
-            this.stavkePrijemniceToolStripMenuItem.Size = new System.Drawing.Size(112, 49);
+            this.stavkePrijemniceToolStripMenuItem.Size = new System.Drawing.Size(113, 49);
             this.stavkePrijemniceToolStripMenuItem.Text = "Stavke Prijemnice";
+            this.stavkePrijemniceToolStripMenuItem.Click += new System.EventHandler(this.stavkePrijemniceToolStripMenuItem_Click);
             // 
             // dobavljacToolStripMenuItem
             // 
@@ -87,18 +89,19 @@
             // 
             this.pnlMain.Location = new System.Drawing.Point(141, 12);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(647, 426);
+            this.pnlMain.Size = new System.Drawing.Size(846, 426);
             this.pnlMain.TabIndex = 2;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(999, 450);
             this.Controls.Add(this.pnlMain);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
