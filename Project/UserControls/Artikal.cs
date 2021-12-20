@@ -11,10 +11,10 @@ using Oracle.ManagedDataAccess.Client;
 
 namespace Project.UserControls
 {
-    public partial class StavkaPrijemnice : UserControl
+    public partial class Artikal : UserControl
     {
         OracleConnection con;
-        public StavkaPrijemnice(Oracle.ManagedDataAccess.Client.OracleConnection con)
+        public Artikal(OracleConnection con)
         {
             this.con = con;
             InitializeComponent();
@@ -23,23 +23,21 @@ namespace Project.UserControls
         private void updateDataGrid()
         {
             OracleCommand cmd = con.CreateCommand();
-            cmd.CommandText = "SELECT * FROM STAVKAPRIJEMNICE ORDER BY BROJPRIJEMNICE";
+            cmd.CommandText = "SELECT a.Sifra AS SifraArtikla, a.Naziv AS NazivArtikla, a.Tezina.get_tezina()" +
+                " AS TezinaArtikla, a.OpisProizvoda.get_primena()" +
+                " AS PrimenaArtikla, a.OpisProizvoda.get_rok() AS" +
+                " RokTrajanja, a.Cena AS CenaKostanja, a.AKTUELNACENA as AKTUELNACENA FROM Artikal a";
             cmd.CommandType = CommandType.Text;
             OracleDataReader dr = cmd.ExecuteReader();
             DataTable dt = new DataTable();
             dt.Load(dr);
-            dgvStart1.DataSource = dt.DefaultView;
+            dgvStart3.DataSource = dt.DefaultView;
             dr.Close();
         }
 
-        private void StavkaPrijemnice_Load(object sender, EventArgs e)
+        private void Artikal_Load(object sender, EventArgs e)
         {
             updateDataGrid();
-        }
-
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

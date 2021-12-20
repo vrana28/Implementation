@@ -86,5 +86,53 @@ namespace Project
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void dobavljacToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                PanelMethod(new Dobavljac(con));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void artikalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                PanelMethod(new Artikal(con));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void magacinToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                PanelMethod(new Magacin(con));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void radnikToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                PanelMethod(new Radnik(con));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

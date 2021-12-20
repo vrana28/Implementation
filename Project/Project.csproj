@@ -56,11 +56,35 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControls\Artikal.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Artikal.Designer.cs">
+      <DependentUpon>Artikal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Dobavljac.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Dobavljac.Designer.cs">
+      <DependentUpon>Dobavljac.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Magacin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Magacin.Designer.cs">
+      <DependentUpon>Magacin.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\Prijemnica.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControls\Prijemnica.Designer.cs">
       <DependentUpon>Prijemnica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Radnik.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Radnik.Designer.cs">
+      <DependentUpon>Radnik.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\StavkaPrijemnice.cs">
       <SubType>UserControl</SubType>
@@ -80,8 +104,20 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UserControls\Artikal.resx">
+      <DependentUpon>Artikal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Dobavljac.resx">
+      <DependentUpon>Dobavljac.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Magacin.resx">
+      <DependentUpon>Magacin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Prijemnica.resx">
       <DependentUpon>Prijemnica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Radnik.resx">
+      <DependentUpon>Radnik.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\StavkaPrijemnice.resx">
       <DependentUpon>StavkaPrijemnice.cs</DependentUpon>
