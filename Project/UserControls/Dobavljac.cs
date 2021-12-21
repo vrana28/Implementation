@@ -36,5 +36,98 @@ namespace Project.UserControls
         {
             updateDataGrid();
         }
+
+        private void AUD(string sql_stmt, int state, int v)
+        {
+
+            String msg = "";
+            OracleCommand cmd = con.CreateCommand();
+            cmd.CommandText = sql_stmt;
+            cmd.CommandType = CommandType.Text;
+
+            switch (state)
+            {
+                case 0:
+                    msg = "Row inserted Successfuly!";
+
+                    if (v == 0) {
+                        cmd.Parameters.Add("SIFRADOBAVLJACA", OracleDbType.Int32, 10).Value = Int32.Parse(txtSifraDobavljaca.Text);
+                        cmd.Parameters.Add("NAZIV", OracleDbType.Varchar2, 50).Value = txtNaziv.Text;
+                        cmd.Parameters.Add("FARMA", OracleDbType.Varchar2, 50).Value = txtNaziv.Text;
+                    }
+
+                    if (v == 1) {
+                        cmd.Parameters.Add("SIFRADOB", OracleDbType.Int32, 10).Value = Int32.Parse(txtSifraDobavljaca.Text);
+                        cmd.Parameters.Add("PIB", OracleDbType.Int32, 10).Value = Int32.Parse(txtPIB.Text);
+                        cmd.Parameters.Add("MATICNIBROJ", OracleDbType.Int32, 10).Value = Int32.Parse(txtMaticniBroj.Text);
+                        cmd.Parameters.Add("RACUN", OracleDbType.Int32, 20).Value = Int64.Parse(txtRacun.Text);
+                        cmd.Parameters.Add("TELEFON", OracleDbType.Int32, 20).Value = Int64.Parse(txtTelefon.Text);
+                        cmd.Parameters.Add("SEDISTE", OracleDbType.Varchar2, 20).Value = txtSediste.Text;
+                    }
+                    break;
+                case 1:
+                    msg = "Row updated Successfuly!";
+                    cmd.Parameters.Add("SIFRADOBAVLJACA", OracleDbType.Int32, 10).Value = Int32.Parse(txtSifraDobavljaca.Text);
+                    cmd.Parameters.Add("SIFRADOB", OracleDbType.Int32, 10).Value = Int32.Parse(txtSifraDobavljaca.Text);
+                    cmd.Parameters.Add("NAZIV", OracleDbType.Varchar2, 50).Value = txtNaziv.Text;
+                    cmd.Parameters.Add("FARMA", OracleDbType.Varchar2, 50).Value = txtNaziv.Text;
+                    cmd.Parameters.Add("PIB", OracleDbType.Int32, 10).Value = Int32.Parse(txtPIB.Text);
+                    cmd.Parameters.Add("MATICNIBROJ", OracleDbType.Int32, 10).Value = Int32.Parse(txtMaticniBroj.Text);
+                    cmd.Parameters.Add("RACUN", OracleDbType.Int32, 20).Value = Int32.Parse(txtRacun.Text);
+                    cmd.Parameters.Add("TELEFON", OracleDbType.Int32, 20).Value = Int32.Parse(txtTelefon.Text);
+                    cmd.Parameters.Add("SEDISTE", OracleDbType.Varchar2, 20).Value = txtSediste.Text;
+                    break;
+                case 2:
+                    msg = "Row deleted Successfuly!";
+                    cmd.Parameters.Add("SIFRADOBAVLJACA", OracleDbType.Int32, 10).Value = Int32.Parse(txtSifraDobavljaca.Text);
+                    break;
+            }
+
+            try
+            {
+                int n = cmd.ExecuteNonQuery();
+                if (n > 0)
+                {
+                    MessageBox.Show(msg);
+                    this.updateDataGrid();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            string sql = "INSERT INTO DOBAVLJAC (SIFRADOBAVLJACA, NAZIV, FARMA)" +
+                " VALUES (:SIFRADOBAVLJACA, :NAZIV, :FARMA)";
+            string sql2 = "INSERT INTO DOBAVLJAC_DETALJI (SIFRADOB, PIB, MATICNIBROJ, RACUN, TELEFON, SEDISTE)" +
+                " VALUES (:SIFRADOB, :PIB, :MATICNIBROJ, :RACUN, :TELEFON, :SEDISTE)";
+            this.AUD(sql, 0, 0);
+            this.AUD(sql2, 0, 1);
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            txtSifraDobavljaca.Text = "";
+            txtNaziv.Text = "";
+            txtFarma.Text = "";
+            txtMaticniBroj.Text = "";
+            txtPIB.Text = "";
+            txtRacun.Text = "";
+            txtSediste.Text = "";
+            txtTelefon.Text = "";
+        }
     }
 }

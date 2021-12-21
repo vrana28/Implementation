@@ -37,13 +37,13 @@
             this.txtBrPrijemnice = new System.Windows.Forms.TextBox();
             this.txtNapomena = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.cbDob = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cbOdgLice = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbRadnikPrimio = new System.Windows.Forms.ComboBox();
             this.cbMagacin = new System.Windows.Forms.ComboBox();
-            this.dtp = new System.Windows.Forms.DateTimePicker();
+            this.dtpDatum = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.btnReset = new System.Windows.Forms.Button();
@@ -126,13 +126,13 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.comboBox3);
+            this.groupBox1.Controls.Add(this.cbDob);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.comboBox2);
+            this.groupBox1.Controls.Add(this.cbOdgLice);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.cbRadnikPrimio);
             this.groupBox1.Controls.Add(this.cbMagacin);
-            this.groupBox1.Controls.Add(this.dtp);
+            this.groupBox1.Controls.Add(this.dtpDatum);
             this.groupBox1.Controls.Add(this.dateTimePicker1);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label2);
@@ -146,13 +146,13 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "PrijemnicaInformacije";
             // 
-            // comboBox3
+            // cbDob
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(84, 205);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 21);
-            this.comboBox3.TabIndex = 20;
+            this.cbDob.FormattingEnabled = true;
+            this.cbDob.Location = new System.Drawing.Point(84, 205);
+            this.cbDob.Name = "cbDob";
+            this.cbDob.Size = new System.Drawing.Size(121, 21);
+            this.cbDob.TabIndex = 20;
             // 
             // label7
             // 
@@ -163,13 +163,13 @@
             this.label7.TabIndex = 19;
             this.label7.Text = "Dobavljac";
             // 
-            // comboBox2
+            // cbOdgLice
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(84, 174);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 18;
+            this.cbOdgLice.FormattingEnabled = true;
+            this.cbOdgLice.Location = new System.Drawing.Point(84, 174);
+            this.cbOdgLice.Name = "cbOdgLice";
+            this.cbOdgLice.Size = new System.Drawing.Size(121, 21);
+            this.cbOdgLice.TabIndex = 18;
             // 
             // label6
             // 
@@ -180,13 +180,13 @@
             this.label6.TabIndex = 17;
             this.label6.Text = "Odg. lice";
             // 
-            // comboBox1
+            // cbRadnikPrimio
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(84, 143);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 16;
+            this.cbRadnikPrimio.FormattingEnabled = true;
+            this.cbRadnikPrimio.Location = new System.Drawing.Point(84, 143);
+            this.cbRadnikPrimio.Name = "cbRadnikPrimio";
+            this.cbRadnikPrimio.Size = new System.Drawing.Size(121, 21);
+            this.cbRadnikPrimio.TabIndex = 16;
             // 
             // cbMagacin
             // 
@@ -196,12 +196,12 @@
             this.cbMagacin.Size = new System.Drawing.Size(121, 21);
             this.cbMagacin.TabIndex = 15;
             // 
-            // dtp
+            // dtpDatum
             // 
-            this.dtp.Location = new System.Drawing.Point(84, 58);
-            this.dtp.Name = "dtp";
-            this.dtp.Size = new System.Drawing.Size(200, 20);
-            this.dtp.TabIndex = 14;
+            this.dtpDatum.Location = new System.Drawing.Point(84, 58);
+            this.dtpDatum.Name = "dtpDatum";
+            this.dtpDatum.Size = new System.Drawing.Size(200, 20);
+            this.dtpDatum.TabIndex = 14;
             // 
             // dateTimePicker1
             // 
@@ -218,6 +218,7 @@
             this.btnReset.TabIndex = 24;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // btnDelete
             // 
@@ -227,6 +228,7 @@
             this.btnDelete.TabIndex = 23;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
@@ -236,6 +238,7 @@
             this.btnUpdate.TabIndex = 22;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnAdd
             // 
@@ -245,6 +248,7 @@
             this.btnAdd.TabIndex = 21;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // Prijemnica
             // 
@@ -281,14 +285,14 @@
         private System.Windows.Forms.TextBox txtNapomena;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.DateTimePicker dtp;
+        private System.Windows.Forms.DateTimePicker dtpDatum;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.ComboBox cbMagacin;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox cbDob;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cbOdgLice;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbRadnikPrimio;
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnUpdate;

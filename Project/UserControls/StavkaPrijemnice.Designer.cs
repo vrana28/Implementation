@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtKolicina = new System.Windows.Forms.TextBox();
+            this.txtBrojPrijemnice = new System.Windows.Forms.TextBox();
+            this.txtRbr = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -48,9 +48,9 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtKolicina);
+            this.groupBox1.Controls.Add(this.txtBrojPrijemnice);
+            this.groupBox1.Controls.Add(this.txtRbr);
             this.groupBox1.Controls.Add(this.dateTimePicker1);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label2);
@@ -63,26 +63,26 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "StavkaPrijemniceInformacije";
             // 
-            // textBox3
+            // txtKolicina
             // 
-            this.textBox3.Location = new System.Drawing.Point(132, 97);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 11;
+            this.txtKolicina.Location = new System.Drawing.Point(132, 97);
+            this.txtKolicina.Name = "txtKolicina";
+            this.txtKolicina.Size = new System.Drawing.Size(100, 20);
+            this.txtKolicina.TabIndex = 11;
             // 
-            // textBox2
+            // txtBrojPrijemnice
             // 
-            this.textBox2.Location = new System.Drawing.Point(132, 64);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 10;
+            this.txtBrojPrijemnice.Location = new System.Drawing.Point(132, 64);
+            this.txtBrojPrijemnice.Name = "txtBrojPrijemnice";
+            this.txtBrojPrijemnice.Size = new System.Drawing.Size(100, 20);
+            this.txtBrojPrijemnice.TabIndex = 10;
             // 
-            // textBox1
+            // txtRbr
             // 
-            this.textBox1.Location = new System.Drawing.Point(132, 38);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 9;
+            this.txtRbr.Location = new System.Drawing.Point(132, 38);
+            this.txtRbr.Name = "txtRbr";
+            this.txtRbr.Size = new System.Drawing.Size(100, 20);
+            this.txtRbr.TabIndex = 9;
             // 
             // dateTimePicker1
             // 
@@ -145,6 +145,7 @@
             this.btnReset.TabIndex = 24;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // btnDelete
             // 
@@ -154,6 +155,7 @@
             this.btnDelete.TabIndex = 23;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
@@ -163,6 +165,7 @@
             this.btnUpdate.TabIndex = 22;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnAdd
             // 
@@ -203,9 +206,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView dgvStart1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtKolicina;
+        private System.Windows.Forms.TextBox txtBrojPrijemnice;
+        private System.Windows.Forms.TextBox txtRbr;
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnUpdate;

@@ -134,5 +134,17 @@ namespace Project
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void cenaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                PanelMethod(new Cena(con));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

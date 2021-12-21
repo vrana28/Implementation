@@ -33,9 +33,10 @@
             this.stavkePrijemniceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dobavljacToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.artikalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pnlMain = new System.Windows.Forms.Panel();
             this.magacinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.radnikToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cenaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pnlMain = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,10 +53,11 @@
             this.dobavljacToolStripMenuItem,
             this.artikalToolStripMenuItem,
             this.magacinToolStripMenuItem,
-            this.radnikToolStripMenuItem});
+            this.radnikToolStripMenuItem,
+            this.cenaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(125, 410);
+            this.menuStrip1.Size = new System.Drawing.Size(126, 410);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -91,13 +93,6 @@
             this.artikalToolStripMenuItem.Text = "Artikal";
             this.artikalToolStripMenuItem.Click += new System.EventHandler(this.artikalToolStripMenuItem_Click);
             // 
-            // pnlMain
-            // 
-            this.pnlMain.Location = new System.Drawing.Point(141, 12);
-            this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(846, 389);
-            this.pnlMain.TabIndex = 2;
-            // 
             // magacinToolStripMenuItem
             // 
             this.magacinToolStripMenuItem.Name = "magacinToolStripMenuItem";
@@ -113,6 +108,21 @@
             this.radnikToolStripMenuItem.Size = new System.Drawing.Size(113, 49);
             this.radnikToolStripMenuItem.Text = "Radnik";
             this.radnikToolStripMenuItem.Click += new System.EventHandler(this.radnikToolStripMenuItem_Click);
+            // 
+            // cenaToolStripMenuItem
+            // 
+            this.cenaToolStripMenuItem.Name = "cenaToolStripMenuItem";
+            this.cenaToolStripMenuItem.Padding = new System.Windows.Forms.Padding(4, 0, 4, 30);
+            this.cenaToolStripMenuItem.Size = new System.Drawing.Size(113, 49);
+            this.cenaToolStripMenuItem.Text = "Cena";
+            this.cenaToolStripMenuItem.Click += new System.EventHandler(this.cenaToolStripMenuItem_Click);
+            // 
+            // pnlMain
+            // 
+            this.pnlMain.Location = new System.Drawing.Point(141, 12);
+            this.pnlMain.Name = "pnlMain";
+            this.pnlMain.Size = new System.Drawing.Size(846, 389);
+            this.pnlMain.TabIndex = 2;
             // 
             // Form1
             // 
@@ -143,6 +153,7 @@
         private System.Windows.Forms.Panel pnlMain;
         private System.Windows.Forms.ToolStripMenuItem magacinToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem radnikToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cenaToolStripMenuItem;
     }
 }
 

@@ -1,6 +1,6 @@
 ﻿namespace Project.UserControls
 {
-    partial class Magacin
+    partial class Cena
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,59 +28,63 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgvStart4 = new System.Windows.Forms.DataGridView();
+            this.dgvStart6 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtNaziv = new System.Windows.Forms.TextBox();
-            this.txtSifraRadnika = new System.Windows.Forms.TextBox();
+            this.txtCena = new System.Windows.Forms.TextBox();
+            this.txtSifra = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.btnReset = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvStart4)).BeginInit();
+            this.dtpDatumOd = new System.Windows.Forms.DateTimePicker();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStart6)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dgvStart4
+            // dgvStart6
             // 
-            this.dgvStart4.AllowUserToAddRows = false;
-            this.dgvStart4.AllowUserToDeleteRows = false;
-            this.dgvStart4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvStart4.Location = new System.Drawing.Point(320, 3);
-            this.dgvStart4.Name = "dgvStart4";
-            this.dgvStart4.ReadOnly = true;
-            this.dgvStart4.Size = new System.Drawing.Size(527, 367);
-            this.dgvStart4.TabIndex = 3;
+            this.dgvStart6.AllowUserToAddRows = false;
+            this.dgvStart6.AllowUserToDeleteRows = false;
+            this.dgvStart6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvStart6.Location = new System.Drawing.Point(320, 14);
+            this.dgvStart6.Name = "dgvStart6";
+            this.dgvStart6.ReadOnly = true;
+            this.dgvStart6.Size = new System.Drawing.Size(527, 367);
+            this.dgvStart6.TabIndex = 17;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.txtNaziv);
-            this.groupBox1.Controls.Add(this.txtSifraRadnika);
+            this.groupBox1.Controls.Add(this.dtpDatumOd);
+            this.groupBox1.Controls.Add(this.txtCena);
+            this.groupBox1.Controls.Add(this.txtSifra);
             this.groupBox1.Controls.Add(this.dateTimePicker1);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(3, 3);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Location = new System.Drawing.Point(13, 14);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(301, 111);
-            this.groupBox1.TabIndex = 15;
+            this.groupBox1.Size = new System.Drawing.Size(301, 127);
+            this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Magacin Informacije";
+            this.groupBox1.Text = "DobavljacInformacije";
             // 
-            // txtNaziv
+            // txtCena
             // 
-            this.txtNaziv.Location = new System.Drawing.Point(121, 57);
-            this.txtNaziv.Name = "txtNaziv";
-            this.txtNaziv.Size = new System.Drawing.Size(153, 20);
-            this.txtNaziv.TabIndex = 19;
+            this.txtCena.Location = new System.Drawing.Point(95, 84);
+            this.txtCena.Name = "txtCena";
+            this.txtCena.Size = new System.Drawing.Size(153, 20);
+            this.txtCena.TabIndex = 20;
             // 
-            // txtSifraRadnika
+            // txtSifra
             // 
-            this.txtSifraRadnika.Location = new System.Drawing.Point(121, 31);
-            this.txtSifraRadnika.Name = "txtSifraRadnika";
-            this.txtSifraRadnika.Size = new System.Drawing.Size(49, 20);
-            this.txtSifraRadnika.TabIndex = 18;
+            this.txtSifra.Location = new System.Drawing.Point(95, 31);
+            this.txtSifra.Name = "txtSifra";
+            this.txtSifra.Size = new System.Drawing.Size(49, 20);
+            this.txtSifra.TabIndex = 18;
             // 
             // dateTimePicker1
             // 
@@ -94,22 +98,31 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(6, 38);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 13);
+            this.label1.Size = new System.Drawing.Size(59, 13);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Sifra magacina";
+            this.label1.Text = "Sifra artikla";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(6, 64);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(34, 13);
+            this.label2.Size = new System.Drawing.Size(53, 13);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Naziv";
+            this.label2.Text = "Datum od";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 87);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(32, 13);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Cena";
             // 
             // btnReset
             // 
-            this.btnReset.Location = new System.Drawing.Point(118, 347);
+            this.btnReset.Location = new System.Drawing.Point(106, 344);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(89, 24);
             this.btnReset.TabIndex = 32;
@@ -119,7 +132,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(213, 303);
+            this.btnDelete.Location = new System.Drawing.Point(201, 300);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(89, 24);
             this.btnDelete.TabIndex = 31;
@@ -129,7 +142,7 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(118, 303);
+            this.btnUpdate.Location = new System.Drawing.Point(106, 300);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(89, 24);
             this.btnUpdate.TabIndex = 30;
@@ -139,7 +152,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(23, 303);
+            this.btnAdd.Location = new System.Drawing.Point(11, 300);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(89, 24);
             this.btnAdd.TabIndex = 29;
@@ -147,20 +160,27 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // Magacin
+            // dtpDatumOd
+            // 
+            this.dtpDatumOd.Location = new System.Drawing.Point(95, 58);
+            this.dtpDatumOd.Name = "dtpDatumOd";
+            this.dtpDatumOd.Size = new System.Drawing.Size(200, 20);
+            this.dtpDatumOd.TabIndex = 21;
+            // 
+            // Cena
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.btnReset);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.dgvStart6);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.dgvStart4);
-            this.Name = "Magacin";
+            this.Name = "Cena";
             this.Size = new System.Drawing.Size(850, 384);
-            this.Load += new System.EventHandler(this.Magacin_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvStart4)).EndInit();
+            this.Load += new System.EventHandler(this.Cena_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStart6)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -169,13 +189,15 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dgvStart4;
+        private System.Windows.Forms.DataGridView dgvStart6;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txtNaziv;
-        private System.Windows.Forms.TextBox txtSifraRadnika;
+        private System.Windows.Forms.TextBox txtCena;
+        private System.Windows.Forms.TextBox txtSifra;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DateTimePicker dtpDatumOd;
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnUpdate;

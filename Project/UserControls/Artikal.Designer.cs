@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.numRok = new System.Windows.Forms.NumericUpDown();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtCenaKostanja = new System.Windows.Forms.TextBox();
+            this.txtPrimena = new System.Windows.Forms.TextBox();
+            this.txtTezina = new System.Windows.Forms.TextBox();
+            this.txtNaziv = new System.Windows.Forms.TextBox();
+            this.txtSifra = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
@@ -49,19 +49,19 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numRok)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStart3)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.numericUpDown1);
+            this.groupBox1.Controls.Add(this.numRok);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.textBox7);
-            this.groupBox1.Controls.Add(this.textBox5);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtCenaKostanja);
+            this.groupBox1.Controls.Add(this.txtPrimena);
+            this.groupBox1.Controls.Add(this.txtTezina);
+            this.groupBox1.Controls.Add(this.txtNaziv);
+            this.groupBox1.Controls.Add(this.txtSifra);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.dateTimePicker1);
             this.groupBox1.Controls.Add(this.label1);
@@ -76,12 +76,12 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "DobavljacInformacije";
             // 
-            // numericUpDown1
+            // numRok
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(121, 173);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(153, 20);
-            this.numericUpDown1.TabIndex = 28;
+            this.numRok.Location = new System.Drawing.Point(121, 173);
+            this.numRok.Name = "numRok";
+            this.numRok.Size = new System.Drawing.Size(153, 20);
+            this.numRok.TabIndex = 28;
             // 
             // label7
             // 
@@ -92,40 +92,40 @@
             this.label7.TabIndex = 26;
             this.label7.Text = "Cena kostanja";
             // 
-            // textBox7
+            // txtCenaKostanja
             // 
-            this.textBox7.Location = new System.Drawing.Point(121, 201);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(153, 20);
-            this.textBox7.TabIndex = 24;
+            this.txtCenaKostanja.Location = new System.Drawing.Point(121, 201);
+            this.txtCenaKostanja.Name = "txtCenaKostanja";
+            this.txtCenaKostanja.Size = new System.Drawing.Size(153, 20);
+            this.txtCenaKostanja.TabIndex = 24;
             // 
-            // textBox5
+            // txtPrimena
             // 
-            this.textBox5.Location = new System.Drawing.Point(121, 146);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(153, 20);
-            this.textBox5.TabIndex = 22;
+            this.txtPrimena.Location = new System.Drawing.Point(121, 146);
+            this.txtPrimena.Name = "txtPrimena";
+            this.txtPrimena.Size = new System.Drawing.Size(153, 20);
+            this.txtPrimena.TabIndex = 22;
             // 
-            // textBox3
+            // txtTezina
             // 
-            this.textBox3.Location = new System.Drawing.Point(121, 83);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(153, 20);
-            this.textBox3.TabIndex = 20;
+            this.txtTezina.Location = new System.Drawing.Point(121, 83);
+            this.txtTezina.Name = "txtTezina";
+            this.txtTezina.Size = new System.Drawing.Size(153, 20);
+            this.txtTezina.TabIndex = 20;
             // 
-            // textBox2
+            // txtNaziv
             // 
-            this.textBox2.Location = new System.Drawing.Point(121, 57);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(153, 20);
-            this.textBox2.TabIndex = 19;
+            this.txtNaziv.Location = new System.Drawing.Point(121, 57);
+            this.txtNaziv.Name = "txtNaziv";
+            this.txtNaziv.Size = new System.Drawing.Size(153, 20);
+            this.txtNaziv.TabIndex = 19;
             // 
-            // textBox1
+            // txtSifra
             // 
-            this.textBox1.Location = new System.Drawing.Point(121, 31);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(49, 20);
-            this.textBox1.TabIndex = 18;
+            this.txtSifra.Location = new System.Drawing.Point(121, 31);
+            this.txtSifra.Name = "txtSifra";
+            this.txtSifra.Size = new System.Drawing.Size(49, 20);
+            this.txtSifra.TabIndex = 18;
             // 
             // label6
             // 
@@ -207,6 +207,7 @@
             this.btnReset.TabIndex = 24;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // btnDelete
             // 
@@ -216,6 +217,7 @@
             this.btnDelete.TabIndex = 23;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
@@ -225,6 +227,7 @@
             this.btnUpdate.TabIndex = 22;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnAdd
             // 
@@ -234,6 +237,7 @@
             this.btnAdd.TabIndex = 21;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // Artikal
             // 
@@ -250,7 +254,7 @@
             this.Load += new System.EventHandler(this.Artikal_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numRok)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStart3)).EndInit();
             this.ResumeLayout(false);
 
@@ -260,11 +264,11 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtCenaKostanja;
+        private System.Windows.Forms.TextBox txtPrimena;
+        private System.Windows.Forms.TextBox txtTezina;
+        private System.Windows.Forms.TextBox txtNaziv;
+        private System.Windows.Forms.TextBox txtSifra;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label1;
@@ -273,7 +277,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView dgvStart3;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown numRok;
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnUpdate;

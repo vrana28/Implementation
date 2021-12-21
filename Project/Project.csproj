@@ -62,6 +62,12 @@
     <Compile Include="UserControls\Artikal.Designer.cs">
       <DependentUpon>Artikal.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\Cena.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Cena.Designer.cs">
+      <DependentUpon>Cena.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\Dobavljac.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -106,6 +112,9 @@
     </Compile>
     <EmbeddedResource Include="UserControls\Artikal.resx">
       <DependentUpon>Artikal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Cena.resx">
+      <DependentUpon>Cena.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Dobavljac.resx">
       <DependentUpon>Dobavljac.cs</DependentUpon>

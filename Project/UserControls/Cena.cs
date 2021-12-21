@@ -11,10 +11,10 @@ using Oracle.ManagedDataAccess.Client;
 
 namespace Project.UserControls
 {
-    public partial class Artikal : UserControl
+    public partial class Cena : UserControl
     {
         OracleConnection con;
-        public Artikal(OracleConnection con)
+        public Cena(OracleConnection con)
         {
             this.con = con;
             InitializeComponent();
@@ -23,19 +23,16 @@ namespace Project.UserControls
         private void updateDataGrid()
         {
             OracleCommand cmd = con.CreateCommand();
-            cmd.CommandText = "SELECT a.Sifra AS SifraArtikla, a.Naziv AS NazivArtikla, a.Tezina.get_tezina()" +
-                " AS TezinaArtikla, a.OpisProizvoda.get_primena()" +
-                " AS PrimenaArtikla, a.OpisProizvoda.get_rok() AS" +
-                " RokTrajanja, a.Cena AS CenaKostanja, a.AKTUELNACENA as AKTUELNACENA FROM Artikal a";
+            cmd.CommandText = "SELECT * FROM CENA ORDER BY SIFRAARTIKLA";
             cmd.CommandType = CommandType.Text;
             OracleDataReader dr = cmd.ExecuteReader();
             DataTable dt = new DataTable();
             dt.Load(dr);
-            dgvStart3.DataSource = dt.DefaultView;
+            dgvStart6.DataSource = dt.DefaultView;
             dr.Close();
         }
 
-        private void Artikal_Load(object sender, EventArgs e)
+        private void Cena_Load(object sender, EventArgs e)
         {
             updateDataGrid();
         }
@@ -53,20 +50,15 @@ namespace Project.UserControls
                 case 0:
                     msg = "Row inserted Successfuly!";
                     cmd.Parameters.Add("SIFRA", OracleDbType.Int32, 10).Value = Int32.Parse(txtSifra.Text);
-                    cmd.Parameters.Add("NAZIV", OracleDbType.Varchar2, 50).Value = txtNaziv.Text;
-                    cmd.Parameters.Add("TEZINA", OracleDbType.Double, 9).Value = Double.Parse(txtTezina.Text);
-                    cmd.Parameters.Add("PRIMENA", OracleDbType.Varchar2, 50).Value = txtPrimena.Text;
-                    cmd.Parameters.Add("ROK", OracleDbType.Int32, 10).Value = Int32.Parse(numRok.Text);
-                    cmd.Parameters.Add("CENA", OracleDbType.Double, 9).Value = Double.Parse(txtCenaKostanja.Text);
+                    cmd.Parameters.Add("DATUMOD", OracleDbType.Varchar2, 50).Value = dtpDatumOd.Value.ToString("yyyy-MM-dd");
+                    cmd.Parameters.Add("CENA", OracleDbType.Double, 9).Value = Double.Parse(txtCena.Text);
                     break;
                 case 1:
                     msg = "Row updated Successfuly!";
+                    msg = "Row inserted Successfuly!";
                     cmd.Parameters.Add("SIFRA", OracleDbType.Int32, 10).Value = Int32.Parse(txtSifra.Text);
-                    cmd.Parameters.Add("NAZIV", OracleDbType.Varchar2, 50).Value = txtNaziv.Text;
-                    cmd.Parameters.Add("TEZINA", OracleDbType.Double, 9).Value = Double.Parse(txtTezina.Text);
-                    cmd.Parameters.Add("PRIMENA", OracleDbType.Varchar2, 50).Value = txtPrimena.Text;
-                    cmd.Parameters.Add("ROK", OracleDbType.Int32, 10).Value = Int32.Parse(numRok.Text);
-                    cmd.Parameters.Add("CENA", OracleDbType.Double, 9).Value = Double.Parse(txtCenaKostanja.Text);
+                    cmd.Parameters.Add("DATUMOD", OracleDbType.Date).Value = dtpDatumOd;
+                    cmd.Parameters.Add("CENA", OracleDbType.Double, 9).Value = Double.Parse(txtCena.Text);
                     break;
                 case 2:
                     msg = "Row deleted Successfuly!";
@@ -91,8 +83,8 @@ namespace Project.UserControls
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            string sql = "INSERT INTO ARTIKAL (SIFRA, NAZIV, TEZINA, OPISPROIZVODA, CENA, AKTUELNACENA)" +
-                " VALUES (:SIFRAMAGACINA, :NAZIV, tezina(:TEZINA), opis_artikla(:PRIMENA,:ROK), :CENA, 0)";
+            string sql = "INSERT INTO CENA (SIFRAARTIKLA, DATUMOD, CENA)" +
+                " VALUES (:SIFRAARTIKLA, TO_DATE(:DATUMOD,'yyyy/mm/dd'), :CENA)";
             this.AUD(sql, 0);
         }
 
@@ -109,11 +101,7 @@ namespace Project.UserControls
         private void btnReset_Click(object sender, EventArgs e)
         {
             txtSifra.Text = "";
-            txtNaziv.Text = "";
-            txtCenaKostanja.Text = "";
-            txtPrimena.Text = "";
-            numRok.Value = 0;
-            txtTezina.Text = "";
+            txtCena.Text = "";
         }
     }
 }
