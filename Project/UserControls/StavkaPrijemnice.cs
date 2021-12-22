@@ -62,6 +62,7 @@ namespace Project.UserControls
                 case 2:
                     msg = "Row deleted Successfuly!";
                     cmd.Parameters.Add("RB", OracleDbType.Int32, 10).Value = Int32.Parse(txtBrojPrijemnice.Text);
+                    cmd.Parameters.Add("BROJPRIJEMNICE", OracleDbType.Int32, 10).Value = Int32.Parse(txtBrojPrijemnice.Text);
                     break;
             }
 
@@ -94,14 +95,32 @@ namespace Project.UserControls
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            string sql = "DELETE FROM STAVKAPRIJEMNICE " +
+                "WHERE RB = :RB AND BROJPRIJEMNICE = :BROJPRIJEMNICE";
+            this.AUD(sql, 2);
+            this.ResetAll();
+        }
 
+        private void ResetAll() {
+            txtRbr.Text = "";
+            txtBrojPrijemnice.Text = "";
+            txtKolicina.Text = "";
         }
 
         private void btnReset_Click(object sender, EventArgs e)
         {
-            txtRbr.Text = "";
-            txtBrojPrijemnice.Text = "";
-            txtKolicina.Text = "";
+            this.ResetAll();
+        }
+
+        private void dgvStart1_DoubleClick(object sender, EventArgs e)
+        {
+            DataRowView dr = (DataRowView)dgvStart1.SelectedRows[0].DataBoundItem;
+            if (dr != null)
+            {
+                txtRbr.Text = dr["RB"].ToString();
+                txtBrojPrijemnice.Text = dr["BROJPRIJEMNICE"].ToString();
+                txtKolicina.Text = dr["KOLICINA"].ToString();
+            }
         }
     }
 }

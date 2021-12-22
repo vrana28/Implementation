@@ -51,9 +51,10 @@
             this.dgvStart5.Location = new System.Drawing.Point(320, 3);
             this.dgvStart5.Name = "dgvStart5";
             this.dgvStart5.ReadOnly = true;
+            this.dgvStart5.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvStart5.Size = new System.Drawing.Size(527, 367);
             this.dgvStart5.TabIndex = 4;
-            this.dgvStart5.SelectionChanged += new System.EventHandler(this.dgvStart5_SelectionChanged);
+            this.dgvStart5.DoubleClick += new System.EventHandler(this.dgvStart5_DoubleClick);
             // 
             // groupBox1
             // 

@@ -30,6 +30,7 @@
         {
             this.dgvStart6 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dtpDatumOd = new System.Windows.Forms.DateTimePicker();
             this.txtCena = new System.Windows.Forms.TextBox();
             this.txtSifra = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -40,7 +41,6 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.dtpDatumOd = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStart6)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -53,8 +53,10 @@
             this.dgvStart6.Location = new System.Drawing.Point(320, 14);
             this.dgvStart6.Name = "dgvStart6";
             this.dgvStart6.ReadOnly = true;
+            this.dgvStart6.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvStart6.Size = new System.Drawing.Size(527, 367);
             this.dgvStart6.TabIndex = 17;
+            this.dgvStart6.DoubleClick += new System.EventHandler(this.dgvStart6_DoubleClick);
             // 
             // groupBox1
             // 
@@ -71,6 +73,13 @@
             this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "DobavljacInformacije";
+            // 
+            // dtpDatumOd
+            // 
+            this.dtpDatumOd.Location = new System.Drawing.Point(95, 58);
+            this.dtpDatumOd.Name = "dtpDatumOd";
+            this.dtpDatumOd.Size = new System.Drawing.Size(200, 20);
+            this.dtpDatumOd.TabIndex = 21;
             // 
             // txtCena
             // 
@@ -159,13 +168,6 @@
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // dtpDatumOd
-            // 
-            this.dtpDatumOd.Location = new System.Drawing.Point(95, 58);
-            this.dtpDatumOd.Name = "dtpDatumOd";
-            this.dtpDatumOd.Size = new System.Drawing.Size(200, 20);
-            this.dtpDatumOd.TabIndex = 21;
             // 
             // Cena
             // 

@@ -31,7 +31,7 @@
             this.dgvStart4 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtNaziv = new System.Windows.Forms.TextBox();
-            this.txtSifraRadnika = new System.Windows.Forms.TextBox();
+            this.txtSifraMagacina = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -51,13 +51,15 @@
             this.dgvStart4.Location = new System.Drawing.Point(320, 3);
             this.dgvStart4.Name = "dgvStart4";
             this.dgvStart4.ReadOnly = true;
+            this.dgvStart4.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvStart4.Size = new System.Drawing.Size(527, 367);
             this.dgvStart4.TabIndex = 3;
+            this.dgvStart4.DoubleClick += new System.EventHandler(this.dgvStart4_DoubleClick);
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.txtNaziv);
-            this.groupBox1.Controls.Add(this.txtSifraRadnika);
+            this.groupBox1.Controls.Add(this.txtSifraMagacina);
             this.groupBox1.Controls.Add(this.dateTimePicker1);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label2);
@@ -75,12 +77,12 @@
             this.txtNaziv.Size = new System.Drawing.Size(153, 20);
             this.txtNaziv.TabIndex = 19;
             // 
-            // txtSifraRadnika
+            // txtSifraMagacina
             // 
-            this.txtSifraRadnika.Location = new System.Drawing.Point(121, 31);
-            this.txtSifraRadnika.Name = "txtSifraRadnika";
-            this.txtSifraRadnika.Size = new System.Drawing.Size(49, 20);
-            this.txtSifraRadnika.TabIndex = 18;
+            this.txtSifraMagacina.Location = new System.Drawing.Point(121, 31);
+            this.txtSifraMagacina.Name = "txtSifraMagacina";
+            this.txtSifraMagacina.Size = new System.Drawing.Size(49, 20);
+            this.txtSifraMagacina.TabIndex = 18;
             // 
             // dateTimePicker1
             // 
@@ -172,7 +174,7 @@
         private System.Windows.Forms.DataGridView dgvStart4;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtNaziv;
-        private System.Windows.Forms.TextBox txtSifraRadnika;
+        private System.Windows.Forms.TextBox txtSifraMagacina;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;

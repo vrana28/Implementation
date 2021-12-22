@@ -92,7 +92,7 @@ namespace Project.UserControls
         private void btnAdd_Click(object sender, EventArgs e)
         {
             string sql = "INSERT INTO ARTIKAL (SIFRA, NAZIV, TEZINA, OPISPROIZVODA, CENA, AKTUELNACENA)" +
-                " VALUES (:SIFRAMAGACINA, :NAZIV, tezina(:TEZINA), opis_artikla(:PRIMENA,:ROK), :CENA, 0)";
+                " VALUES (:SIFRA, :NAZIV, tezina(:TEZINA), opis_artikla(:PRIMENA,:ROK), :CENA, 0)";
             this.AUD(sql, 0);
         }
 
@@ -103,10 +103,13 @@ namespace Project.UserControls
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-
+            string sql = "DELETE FROM ARTIKAL " +
+                "WHERE SIFRA = :SIFRA";
+            this.AUD(sql, 2);
+            this.resetAll();
         }
 
-        private void btnReset_Click(object sender, EventArgs e)
+        public void resetAll()
         {
             txtSifra.Text = "";
             txtNaziv.Text = "";
@@ -114,6 +117,25 @@ namespace Project.UserControls
             txtPrimena.Text = "";
             numRok.Value = 0;
             txtTezina.Text = "";
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            this.resetAll();
+        }
+
+        private void dgvStart3_DoubleClick(object sender, EventArgs e)
+        {
+            DataRowView dr = (DataRowView)dgvStart3.SelectedRows[0].DataBoundItem;
+            if (dr != null)
+            {
+                txtSifra.Text = dr["SIFRAARTIKLA"].ToString();
+                txtNaziv.Text = dr["NAZIVARTIKLA"].ToString();
+                txtCenaKostanja.Text = dr["CENAKOSTANJA"].ToString();
+                txtPrimena.Text = dr["PRIMENAARTIKLA"].ToString();
+                numRok.Value = Int32.Parse(dr["ROKTRAJANJA"].ToString());
+                txtTezina.Text = dr["TEZINAARTIKLA"].ToString();
+            }
         }
     }
 }

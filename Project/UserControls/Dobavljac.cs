@@ -115,11 +115,16 @@ namespace Project.UserControls
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-
+            string sql = "DELETE FROM DOBAVLJAC " +
+                "WHERE SIFRADOBAVLJACA = :SIFRADOBAVLJACA";
+            string sql2 = "DELETE FROM DOBAVLJAC_DETALJI" +
+                " WHERE SIFRADOB = :SIFRADOBAVLJACA";
+            this.AUD(sql2, 2, 0);
+            this.AUD(sql, 2, 0);
+            this.ResetAll();
         }
 
-        private void btnReset_Click(object sender, EventArgs e)
-        {
+        public void ResetAll() {
             txtSifraDobavljaca.Text = "";
             txtNaziv.Text = "";
             txtFarma.Text = "";
@@ -128,6 +133,27 @@ namespace Project.UserControls
             txtRacun.Text = "";
             txtSediste.Text = "";
             txtTelefon.Text = "";
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            this.ResetAll();
+        }
+
+        private void dgvStart2_DoubleClick(object sender, EventArgs e)
+        {
+            DataRowView dr = (DataRowView)dgvStart2.SelectedRows[0].DataBoundItem;
+            if (dr != null)
+            {
+                txtSifraDobavljaca.Text = dr["SIFRADOBAVLJACA"].ToString();
+                txtNaziv.Text = dr["NAZIV"].ToString();
+                txtFarma.Text = dr["FARMA"].ToString();
+                txtPIB.Text = dr["PIB"].ToString();
+                txtMaticniBroj.Text = dr["PIB"].ToString();
+                txtRacun.Text = dr["RACUN"].ToString();
+                txtTelefon.Text = dr["TELEFON"].ToString();
+                txtSediste.Text = dr["SEDISTE"].ToString();
+            }
         }
     }
 }

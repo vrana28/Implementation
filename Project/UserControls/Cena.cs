@@ -49,20 +49,20 @@ namespace Project.UserControls
             {
                 case 0:
                     msg = "Row inserted Successfuly!";
-                    cmd.Parameters.Add("SIFRA", OracleDbType.Int32, 10).Value = Int32.Parse(txtSifra.Text);
+                    cmd.Parameters.Add("SIFRAARTIKLA", OracleDbType.Int32, 10).Value = Int32.Parse(txtSifra.Text);
                     cmd.Parameters.Add("DATUMOD", OracleDbType.Varchar2, 50).Value = dtpDatumOd.Value.ToString("yyyy-MM-dd");
                     cmd.Parameters.Add("CENA", OracleDbType.Double, 9).Value = Double.Parse(txtCena.Text);
                     break;
                 case 1:
                     msg = "Row updated Successfuly!";
-                    msg = "Row inserted Successfuly!";
-                    cmd.Parameters.Add("SIFRA", OracleDbType.Int32, 10).Value = Int32.Parse(txtSifra.Text);
-                    cmd.Parameters.Add("DATUMOD", OracleDbType.Date).Value = dtpDatumOd;
+                    cmd.Parameters.Add("SIFRAARTIKLA", OracleDbType.Int32, 10).Value = Int32.Parse(txtSifra.Text);
+                    cmd.Parameters.Add("DATUMOD", OracleDbType.Varchar2, 50).Value = dtpDatumOd.Value.ToString("yyyy-MM-dd");
                     cmd.Parameters.Add("CENA", OracleDbType.Double, 9).Value = Double.Parse(txtCena.Text);
                     break;
                 case 2:
                     msg = "Row deleted Successfuly!";
-                    cmd.Parameters.Add("SIFRA", OracleDbType.Int32, 10).Value = Int32.Parse(txtSifra.Text);
+                    cmd.Parameters.Add("SIFRAARTIKLA", OracleDbType.Int32, 10).Value = Int32.Parse(txtSifra.Text);
+                    cmd.Parameters.Add("DATUMOD", OracleDbType.Varchar2, 50).Value = dtpDatumOd.Value.ToString("yyyy-MM-dd");
                     break;
             }
 
@@ -90,18 +90,39 @@ namespace Project.UserControls
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-
+            string sql = "UPDATE CENA SET " +
+                "CENA =:CENA WHERE SIFRAARTIKLA =:SIFRAARTIKLA AND  DATUMOD =TO_DATE(:DATUMOD, 'yyyy/mm/dd')";
+            this.AUD(sql, 1);
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            string sql = "DELETE FROM CENA " +
+                "WHERE SIFRAARTIKLA = :SIFRAARTIKLA AND DATUMOD = TO_DATE(:DATUMOD,'yyyy/mm/dd')";
+            this.AUD(sql, 2);
+            this.resetAll();
+        }
 
+        public void resetAll()
+        {
+            txtSifra.Text = "";
+            txtCena.Text = "";
         }
 
         private void btnReset_Click(object sender, EventArgs e)
         {
-            txtSifra.Text = "";
-            txtCena.Text = "";
+            this.resetAll();
+        }
+
+        private void dgvStart6_DoubleClick(object sender, EventArgs e)
+        {
+            DataRowView dr = (DataRowView)dgvStart6.SelectedRows[0].DataBoundItem;
+            if (dr != null)
+            {
+                txtSifra.Text = dr["SIFRAARTIKLA"].ToString();
+                dtpDatumOd.Value = DateTime.Parse(dr["DATUMOD"].ToString());
+                txtCena.Text = dr["CENA"].ToString();
+            }
         }
     }
 }

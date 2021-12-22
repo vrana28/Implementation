@@ -144,13 +144,33 @@ namespace Project.UserControls
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            string sql = "DELETE FROM PRIJEMNICA " +
+                "WHERE BROJPRIJEMNICE = :BROJPRIJEMNICE";
+            this.AUD(sql, 2);
+            this.ResetAll();
+        }
 
+        public void ResetAll() {
+            txtBrPrijemnice.Text = "";
+            txtNapomena.Text = "";
         }
 
         private void btnReset_Click(object sender, EventArgs e)
         {
-            txtBrPrijemnice.Text = "";
-            txtNapomena.Text = "";
+            this.ResetAll();
+        }
+
+        private void dgvStart_DoubleClick(object sender, EventArgs e)
+        {
+            DataRowView dr = (DataRowView)dgvStart.SelectedRows[0].DataBoundItem;
+            if (dr != null)
+            {
+                txtBrPrijemnice.Text = dr["BROJPRIJEMNICE"].ToString();
+                dtpDatum.Value = DateTime.Parse(dr["DATUM"].ToString());
+                txtNapomena.Text = dr["NAPOMENA"].ToString();
+                cbMagacin.Text = dr["NAZIVMAGACINA"].ToString();
+                
+            }
         }
     }
 }

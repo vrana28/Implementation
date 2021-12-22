@@ -134,8 +134,10 @@
             this.dgvStart1.Location = new System.Drawing.Point(328, 3);
             this.dgvStart1.Name = "dgvStart1";
             this.dgvStart1.ReadOnly = true;
+            this.dgvStart1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvStart1.Size = new System.Drawing.Size(506, 367);
             this.dgvStart1.TabIndex = 15;
+            this.dgvStart1.DoubleClick += new System.EventHandler(this.dgvStart1_DoubleClick);
             // 
             // btnReset
             // 

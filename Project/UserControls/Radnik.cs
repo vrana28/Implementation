@@ -81,7 +81,16 @@ namespace Project.UserControls
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            string sql = "DELETE FROM RADNIK " +
+                "WHERE SIFRARADNIKA = :SIFRARADNIKA";
+            this.AUD(sql, 2);
+            this.resetAll();
+        }
 
+        public void resetAll()
+        {
+            txtSifraRadnika.Text = "";
+            txtImePrezime.Text = "";
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -93,15 +102,19 @@ namespace Project.UserControls
 
         private void btnReset_Click(object sender, EventArgs e)
         {
-            txtSifraRadnika.Text = "";
-            txtImePrezime.Text = "";
+            this.resetAll();
 
         }
 
-        private void dgvStart5_SelectionChanged(object sender, EventArgs e)
+        private void dgvStart5_DoubleClick(object sender, EventArgs e)
         {
-            //DataGrid dg = sender as DataGrid;
-            //DataRowView dr = dg.se as DataRowView;
+            DataRowView dr = (DataRowView)dgvStart5.SelectedRows[0].DataBoundItem;
+            if (dr != null)
+            {
+                txtSifraRadnika.Text = dr["SIFRARADNIKA"].ToString();
+                txtImePrezime.Text = dr["IMEPREZIME"].ToString();
+
+            }
         }
     }
 }
