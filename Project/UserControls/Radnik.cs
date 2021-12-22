@@ -52,8 +52,8 @@ namespace Project.UserControls
                     break;
                 case 1:
                     msg = "Row updated Successfuly!";
-                    cmd.Parameters.Add("SIFRARADNIKA", OracleDbType.Int32, 10).Value = Int32.Parse(txtSifraRadnika.Text);
                     cmd.Parameters.Add("IMEPREZIME", OracleDbType.Varchar2, 50).Value = txtImePrezime.Text;
+                    cmd.Parameters.Add("SIFRARADNIKA", OracleDbType.Int32, 10).Value = Int32.Parse(txtSifraRadnika.Text);
                     break;
                 case 2:
                     msg = "Row deleted Successfuly!";
@@ -76,7 +76,8 @@ namespace Project.UserControls
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            
+            string sql = "UPDATE RADNIK SET IMEPREZIME =:IMEPREZIME WHERE SIFRARADNIKA = :SIFRARADNIKA";
+            this.AUD(sql, 1);
         }
 
         private void btnDelete_Click(object sender, EventArgs e)

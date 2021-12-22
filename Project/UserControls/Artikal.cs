@@ -61,12 +61,12 @@ namespace Project.UserControls
                     break;
                 case 1:
                     msg = "Row updated Successfuly!";
-                    cmd.Parameters.Add("SIFRA", OracleDbType.Int32, 10).Value = Int32.Parse(txtSifra.Text);
                     cmd.Parameters.Add("NAZIV", OracleDbType.Varchar2, 50).Value = txtNaziv.Text;
                     cmd.Parameters.Add("TEZINA", OracleDbType.Double, 9).Value = Double.Parse(txtTezina.Text);
                     cmd.Parameters.Add("PRIMENA", OracleDbType.Varchar2, 50).Value = txtPrimena.Text;
                     cmd.Parameters.Add("ROK", OracleDbType.Int32, 10).Value = Int32.Parse(numRok.Text);
                     cmd.Parameters.Add("CENA", OracleDbType.Double, 9).Value = Double.Parse(txtCenaKostanja.Text);
+                    cmd.Parameters.Add("SIFRA", OracleDbType.Int32, 10).Value = Int32.Parse(txtSifra.Text);
                     break;
                 case 2:
                     msg = "Row deleted Successfuly!";
@@ -98,7 +98,10 @@ namespace Project.UserControls
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-
+            string sql = "UPDATE ARTIKAL SET " +
+                "NAZIV =:NAZIV, TEZINA = tezina(:TEZINA), OPISPROIZVODA = opis_artikla(:PRIMENA, :ROK), CENA = :CENA" +
+                " WHERE SIFRA = :SIFRA";
+            this.AUD(sql, 1);
         }
 
         private void btnDelete_Click(object sender, EventArgs e)

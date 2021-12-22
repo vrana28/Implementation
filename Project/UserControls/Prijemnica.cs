@@ -101,13 +101,13 @@ namespace Project.UserControls
                     break;
                 case 1:
                     msg = "Row updated Successfuly!";
-                    cmd.Parameters.Add("BROJPRIJEMNICE", OracleDbType.Int32, 10).Value = Int32.Parse(txtBrPrijemnice.Text);
                     cmd.Parameters.Add("DATUM", OracleDbType.Varchar2, 50).Value = dtpDatum.Value.ToString("yyyy-MM-dd");
                     cmd.Parameters.Add("NAPOMENA", OracleDbType.Varchar2, 50).Value = txtNapomena.Text;
                     cmd.Parameters.Add("SIFRARADNIKAPRIMIO", OracleDbType.Int32, 10).Value = cbRadnikPrimio.SelectedValue;
                     cmd.Parameters.Add("SIFRARADNIKAODGLICE", OracleDbType.Int32, 10).Value = cbOdgLice.SelectedValue;
                     cmd.Parameters.Add("SIFRAMAGACINA", OracleDbType.Int32, 10).Value = cbMagacin.SelectedValue;
                     cmd.Parameters.Add("SIFRADOBAVLJACA", OracleDbType.Int32, 10).Value = cbDob.SelectedValue;
+                    cmd.Parameters.Add("BROJPRIJEMNICE", OracleDbType.Int32, 10).Value = Int32.Parse(txtBrPrijemnice.Text);
                     break;
                 case 2:
                     msg = "Row deleted Successfuly!";
@@ -139,7 +139,11 @@ namespace Project.UserControls
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-
+            string sql = "UPDATE PRIJEMNICA SET " +
+                "DATUM = TO_DATE(:DATUM,'yyyy/mm/dd'), NAPOMENA = :NAPOMENA, SIFRARADNIKAPRIMIO = :SIFRARADNIKAPRIMIO," + 
+                " SIFRARADNIKAODGLICE = :SIFRARADNIKAODGLICE, SIFRAMAGACINA = :SIFRAMAGACINA," +
+                " SIFRADOBAVLJACA = :SIFRADOBAVLJACA WHERE BROJPRIJEMNICE = :BROJPRIJEMNICE";
+            this.AUD(sql, 1);
         }
 
         private void btnDelete_Click(object sender, EventArgs e)

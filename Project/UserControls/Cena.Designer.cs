@@ -72,7 +72,7 @@
             this.groupBox1.Size = new System.Drawing.Size(301, 127);
             this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "DobavljacInformacije";
+            this.groupBox1.Text = "Cena Informacije";
             // 
             // dtpDatumOd
             // 

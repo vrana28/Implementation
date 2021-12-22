@@ -54,8 +54,8 @@ namespace Project.UserControls
                     break;
                 case 1:
                     msg = "Row updated Successfuly!";
-                    cmd.Parameters.Add("SIFRAMAGACINA", OracleDbType.Int32, 10).Value = Int32.Parse(txtSifraMagacina.Text);
                     cmd.Parameters.Add("NAZIV", OracleDbType.Varchar2, 50).Value = txtNaziv.Text;
+                    cmd.Parameters.Add("SIFRAMAGACINA", OracleDbType.Int32, 10).Value = Int32.Parse(txtSifraMagacina.Text);
                     break;
                 case 2:
                     msg = "Row deleted Successfuly!";

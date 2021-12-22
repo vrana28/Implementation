@@ -55,9 +55,9 @@ namespace Project.UserControls
                     break;
                 case 1:
                     msg = "Row updated Successfuly!";
+                    cmd.Parameters.Add("CENA", OracleDbType.Double, 9).Value = Double.Parse(txtCena.Text);
                     cmd.Parameters.Add("SIFRAARTIKLA", OracleDbType.Int32, 10).Value = Int32.Parse(txtSifra.Text);
                     cmd.Parameters.Add("DATUMOD", OracleDbType.Varchar2, 50).Value = dtpDatumOd.Value.ToString("yyyy-MM-dd");
-                    cmd.Parameters.Add("CENA", OracleDbType.Double, 9).Value = Double.Parse(txtCena.Text);
                     break;
                 case 2:
                     msg = "Row deleted Successfuly!";

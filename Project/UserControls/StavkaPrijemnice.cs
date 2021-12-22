@@ -55,9 +55,9 @@ namespace Project.UserControls
                     break;
                 case 1:
                     msg = "Row updated Successfuly!";
+                    cmd.Parameters.Add("KOLICINA", OracleDbType.Double, 9).Value = Double.Parse(txtKolicina.Text);
                     cmd.Parameters.Add("RB", OracleDbType.Int32, 10).Value = Int32.Parse(txtBrojPrijemnice.Text);
                     cmd.Parameters.Add("BROJPRIJEMNICE", OracleDbType.Int32, 10).Value = Int32.Parse(txtBrojPrijemnice.Text);
-                    cmd.Parameters.Add("KOLICINA", OracleDbType.Double, 9).Value = Double.Parse(txtKolicina.Text);
                     break;
                 case 2:
                     msg = "Row deleted Successfuly!";
@@ -90,7 +90,10 @@ namespace Project.UserControls
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-
+            string sql = "UPDATE STAVKAPRIJEMNICE SET " +
+                " KOLICINA = :KOLICINA" +
+                " WHERE RB = :RB AND BROJPRIJEMNICE = :BROJPRIJEMNICE";
+            this.AUD(sql, 1);
         }
 
         private void btnDelete_Click(object sender, EventArgs e)

@@ -53,7 +53,7 @@ namespace Project.UserControls
                     if (v == 0) {
                         cmd.Parameters.Add("SIFRADOBAVLJACA", OracleDbType.Int32, 10).Value = Int32.Parse(txtSifraDobavljaca.Text);
                         cmd.Parameters.Add("NAZIV", OracleDbType.Varchar2, 50).Value = txtNaziv.Text;
-                        cmd.Parameters.Add("FARMA", OracleDbType.Varchar2, 50).Value = txtNaziv.Text;
+                        cmd.Parameters.Add("FARMA", OracleDbType.Varchar2, 50).Value = txtFarma.Text;
                     }
 
                     if (v == 1) {
@@ -67,15 +67,22 @@ namespace Project.UserControls
                     break;
                 case 1:
                     msg = "Row updated Successfuly!";
-                    cmd.Parameters.Add("SIFRADOBAVLJACA", OracleDbType.Int32, 10).Value = Int32.Parse(txtSifraDobavljaca.Text);
-                    cmd.Parameters.Add("SIFRADOB", OracleDbType.Int32, 10).Value = Int32.Parse(txtSifraDobavljaca.Text);
-                    cmd.Parameters.Add("NAZIV", OracleDbType.Varchar2, 50).Value = txtNaziv.Text;
-                    cmd.Parameters.Add("FARMA", OracleDbType.Varchar2, 50).Value = txtNaziv.Text;
+                    if (v == 0)
+                    {
+                        cmd.Parameters.Add("NAZIV", OracleDbType.Varchar2, 50).Value = txtNaziv.Text;
+                        cmd.Parameters.Add("FARMA", OracleDbType.Varchar2, 50).Value = txtFarma.Text;
+                        cmd.Parameters.Add("SIFRADOBAVLJACA", OracleDbType.Int32, 10).Value = Int32.Parse(txtSifraDobavljaca.Text);
+                    }
+
+                    if (v == 1) { 
+                    
+                    }
                     cmd.Parameters.Add("PIB", OracleDbType.Int32, 10).Value = Int32.Parse(txtPIB.Text);
                     cmd.Parameters.Add("MATICNIBROJ", OracleDbType.Int32, 10).Value = Int32.Parse(txtMaticniBroj.Text);
                     cmd.Parameters.Add("RACUN", OracleDbType.Int32, 20).Value = Int32.Parse(txtRacun.Text);
                     cmd.Parameters.Add("TELEFON", OracleDbType.Int32, 20).Value = Int32.Parse(txtTelefon.Text);
                     cmd.Parameters.Add("SEDISTE", OracleDbType.Varchar2, 20).Value = txtSediste.Text;
+                    cmd.Parameters.Add("SIFRADOB", OracleDbType.Int32, 10).Value = Int32.Parse(txtSifraDobavljaca.Text);
                     break;
                 case 2:
                     msg = "Row deleted Successfuly!";
@@ -110,7 +117,13 @@ namespace Project.UserControls
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-
+            string sql = "UPDATE DOBAVLJAC SET " +
+                "NAZIV = :NAZIV, FARMA = :FARMA WHERE SIFRADOBAVLJACA = :SIFRADOBAVLJACA";
+            string sql2 = "UPDATE DOBAVLJAC_DETALJI SET " +
+                "PIB = :PIB, MATICNIBROJ = :MATICNIBROJ, RACUN = :RACUN, TELEFON = :TELEFON," +
+                "SEDISTE = :SEDISTE WHERE SIFRADOB = :SIFRADOB";
+            this.AUD(sql, 1, 0);
+            this.AUD(sql2, 1, 1);
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
